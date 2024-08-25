@@ -66,6 +66,23 @@
           mute = 1;
         }
       }
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          if (mute == 0) {
+            document
+              .getElementById("5")
+              .classList.replace("fa-volume-high", "fa-volume-xmark");
+            audio.pause();
+          }
+        } else {
+          if (mute == 0) {
+            document
+              .getElementById("5")
+              .classList.replace("fa-volume-xmark", "fa-volume-high");
+            audio.play();
+          }
+        }
+      });
     </script>
   </body>
 </html>
